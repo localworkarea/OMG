@@ -1,0 +1,135 @@
+@use "sass:math";
+
+// Підключення міксинів ============
+@import "base/mixins";
+
+// Підключення шрифтів =====================
+//&display=swap - додати при підключенні через плагін
+
+// Підключити, якщо є локальні файли шрифтів
+@import "fonts/fonts";
+
+// Підключення іконкових шрифтів ========================
+// Підключити, якщо є файл іконкового шрифту
+//@import "fonts/icons";
+
+// За замовчуванням шрифт =========================
+$fontFamily: "Gilroy", sans-serif;
+$fontSize: rem(20); // де 14(px) - розмір шрифту за замовчуванням з макету
+
+// Основні кольори
+$mainColor: #000; // Колір шрифту за замовчуванням
+$_6D37FF: #6D37FF;
+$_2C1483: #2C1483;
+$_3A14BF: #3A14BF;
+$_8351F2: #8351F2;
+$_A988F1: #A988F1;
+$_FFE319: #FFE319;
+$_F2CB04: #F2CB04;
+$_F29F05: #F29F05;
+$gray: #EAEAEA;
+
+// Налаштування адаптивної сітки ===================================
+
+// Мінімальна ширина сторінки
+$minWidth: 320;
+// Ширина полотна (макету)
+$maxWidth: 1920;
+// Ширина обмежуючого контейнера (0 = немає обмеження)
+$maxWidthContainer: 1440;
+// Загальний відступ у контейнера
+// (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerPadding: 0;
+
+// Ширина спрацьовування першого брейкпоінту
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Брейк-поїнти
+$pc: em($containerWidth); // ПК, ноутбуки, деякі планшети у горизонтальному положенні
+$tablet: em(992); // Планшети, деякі телефони в горизонтальному положенні
+$mobile: em(768.98); // Телефони L
+$mobileSmall: em(479.98); // Телефони S
+
+// Тип адаптива:
+// 1 = чуйність (у контейнера немає брейкпоінтів),
+// 2 = по брейк-поїнт (контейнер змінює свою ширину по брейк-поїнт)
+$responsiveType: 1;
+
+
+@import "base/null";
+
+// Стилі тега BODY ==================
+
+body {
+	transition: all 0.3s ease 0s;
+	// Скролл заблоковано
+	.lock & {
+		overflow: hidden;
+		touch-action: none;
+		overscroll-behavior: none;
+	}
+	// Сайт завантажений
+	.loaded & {
+	}
+}
+html.light body {
+	background-color: $gray;
+	color: $mainColor;
+}
+
+html.dark body {
+	background-color: $mainColor;
+	color: $gray;
+}
+
+
+
+// Оболонка wrapper ===================================================
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	@supports (overflow: clip) {
+		overflow: clip;
+	}
+	// Притискаємо footer
+	> main {
+		flex: 1 1 auto;
+	}
+	// Фікс для слайдерів
+	> * {
+		min-width: 0;
+	}
+}
+// Обмежуючий контейнер ===========================================
+
+@if ($responsiveType==1) {
+	// Чуйна
+	[class*="__container"] {
+		@if ($maxWidthContainer>0) {
+			max-width: rem($containerWidth);
+			margin: 0 auto;
+			@include adaptiveValue ("padding-left", 202, 180, 0, 1440, 1280);
+			@include adaptiveValue ("padding-left", 180, 20, 3, 1280, 768);
+
+			@include adaptiveValue ("padding-right", 202, 180, 0, 1440, 1280);
+			@include adaptiveValue ("padding-right", 180, 20, 3, 1280, 768);
+		}
+	
+	}
+}
+
+// Підключення базових стилів, шаблонів (заготівель) та допоміжних класів
+// Для підключення/вимкнення конкретних стилів дивись base.scss
+@import "base";
+
+// Підключення стилів загальних елементів проекту
+@import "common";
+
+// Підключення стилів окремих блоків
+@import "header";
+@import "footer";
+
+// Підключення стилів окремих сторінок
+@import "home";

@@ -1,0 +1,132 @@
+<div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">Закрити</button>
+			<div class="popup__text">
+				Text
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div id="form-message-blue" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content form-massage form-massage_blue">
+			<button data-close type="button" class="form-massage__close form-massage__close_white"></button>
+			<div class="form-massage__body">
+				<div class="form-massage__title">Дякуємо!</div>
+				<div class="form-massage__text">Зв’яжемося з вами<br> наближчим часом!</div>
+				<div class="form-massage__ok">
+					<img src="@img/icons/ok.svg" class="form-massage__ok-icon" alt="icon">
+				</div>
+			</div>
+			<div class="form-massage__image">
+				<img src="@img/icons/form-eyes.svg" class="form-massage__img" alt="eyes">
+			</div>
+		</div>
+	</div>
+</div>
+<div id="form-message-yellow" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content form-massage form-massage_yellow">
+			<button data-close type="button" class="form-massage__close form-massage__close_black"></button>
+			<div class="form-massage__body">
+				<div class="form-massage__title">Дякуємо!</div>
+				<div class="form-massage__text">Зв’яжемося з вами<br> наближчим часом!</div>
+				<div class="form-massage__ok">
+					<img src="@img/icons/ok.svg" class="form-massage__ok-icon" alt="icon">
+				</div>
+			</div>
+			<div class="form-massage__image">
+				<img src="@img/icons/form-eyes.svg" class="form-massage__img" alt="eyes">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="form-vacancy" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content popup-form">
+			<span class="popup-form__puzzle puzzle-big puzzle-big_yellow puzzle-big__puzzle_top"></span>
+			<span class="popup-form__puzzle puzzle-big puzzle-big_black puzzle-big__puzzle_rt"></span>
+			<span class="popup-form__puzzle puzzle-big puzzle-big_black puzzle-big__puzzle_btm"></span>
+			<span class="popup-form__puzzle puzzle-big puzzle-big_yellow puzzle-big__puzzle_lt"></span>
+			<button data-close type="button" class="form-massage__close form-massage__close_black"></button>
+				<div class="form__head">
+					<div class="form__head-wrap">
+						<h2 class="form__title">Ми завжди знаходимось у пошуку <span class="title-line title-line_rotate">&nbsp;креативних&nbsp;</span><span class="title-line">&nbsp;та амбітних людей&nbsp;</span></h2>
+						<div class="form__subtitle">Тому, навіть якщо цікавої тобі вакансії на цій сторінці поки немає, заповнюй форму та додавай резюме</div>
+					</div>
+					<div class="form__image">
+						<img class="form__img" src="@img/icons/form-eyes.svg" alt="eyes">
+					</div>
+				</div>
+				<form data-dev data-popup-message="#form-message-yellow" action="files/sendmail/sendmail.php" method="POST" class="form-two__form">
+					<div class="form__inputs">
+						<div class="form__item">
+							<input type="text" name="name" data-required data-validate data-error="Обов'язкове поле" placeholder="Ім’я" class="input">
+						</div>
+						<div class="form__item">
+							<input type="text" name="surname" data-required data-validate data-error="Обов'язкове поле" placeholder="Прізвище" class="input">
+						</div>
+						<div class="form__item">
+							<input type="tel" data-inputmask="'mask': '+38 099 999 99 99'" name="surname" data-required data-validate data-error="Обов'язкове поле" placeholder="+38 (0__) ___ __ __" class="input">
+						</div>
+						<div class="form__item">
+							<input type="email" name="email" data-required data-validate data-error="Некоректний e-mail" placeholder="Email" class="input">
+						</div>
+						<div class="form__item">
+							<input type="text" name="social" data-required data-validate data-error="Обов'язкове поле" placeholder="Соцмережі" class="input">
+						</div>
+						<div class="form__item">
+							<input type="text" name="position" data-required data-validate data-error="Обов'язкове поле" placeholder="Посада" class="input">
+						</div>
+						<textarea name="description" placeholder="Опишіть себе одним реченням" class="input"></textarea>
+						<div class="form__item">
+							<input type="url" name="CV" data-required data-validate data-error="Обов'язкове поле" placeholder="Посилання на CV" class="input">
+						</div>
+					</div>
+					<button type="submit" class="form__button">Відправити</button>
+				</form>
+		</div>
+	</div>
+</div>
+<div id="form-brief" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content popup-form">
+			<span class="popup-form__puzzle puzzle-big puzzle-big_yellow puzzle-big__puzzle_top"></span>
+			<span class="popup-form__puzzle puzzle-big puzzle-big_black puzzle-big__puzzle_rt"></span>
+			<span class="popup-form__puzzle puzzle-big puzzle-big_black puzzle-big__puzzle_btm"></span>
+			<span class="popup-form__puzzle puzzle-big puzzle-big_yellow puzzle-big__puzzle_lt"></span>
+			<button data-close type="button" class="form-massage__close form-massage__close_black"></button>
+				<div class="form__head">
+					<h2 class="form__title">Створимо разом щось <span class="title-line">&nbsp;дійсно якісне?&nbsp;</span></h2>
+					<div class="form__image">
+						<img class="form__img" src="@img/icons/form-eyes.svg" alt="eyes">
+					</div>
+				</div>
+				<form data-dev data-popup-message="#form-message-yellow" action="files/sendmail/sendmail.php" method="POST">
+					<div class="form__inputs">
+						<div class="form__item">
+							<input type="text" name="company" data-required data-validate data-error="Обов'язкове поле" placeholder="Назва компанії/бренду" class="input">
+						</div>
+						<div class="form__item">
+							<input type="text" name="name" data-required data-validate data-error="Обов'язкове поле" placeholder="Ім’я та прізвище" class="input">
+						</div>
+						<div class="form__item">
+							<input type="email" name="email" data-required data-validate data-error="Некоректний e-mail" placeholder="Email" class="input">
+						</div>
+						<div class="form__item">
+							<input type="text" name="telegram" placeholder="Telegram" class="input">
+						</div>
+					</div>
+					<textarea name="message" placeholder="Послуга або завдання" class="input"></textarea>
+					<button type="submit" class="form__button">Відправити</button>
+				</form>
+		</div>
+	</div>
+</div>
+
+
+

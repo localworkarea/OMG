@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"Вакансії"
+	})
+	<body>
+		@@include('html/_side.htm',{})
+		<div class="wrapper wrapper__vacancy-page">
+      <div class="back-btn">
+        <a href="career.html" class="back-btn__back">
+          <span class="arrow-main"></span>
+          <span class="back-btn__text">Назад</span>
+        </a>
+      </div>
+			@@include('html/_header.htm',{})
+			<main class="page page__vacancy-page">
+        <section class="vacancy-page">
+          <div class="vacancy-page__container">
+            <h1 class="vacancy-page__title title-main">ТикТокер</h1>
+            <div class="vacancy-page__subtitle">Шукаємо людину з вільною румунською</div>
+            <h3 class="list-vacany__title">Що треба робити:</h3>
+            <ul class="vacancy-page__list list-vacany">
+              <li class="list-vacany__li text-big-r">Зніматись для офіційного ТікТок аккаунту відомого бренду техніки (10 роликів по 30 сек., на початку)</li>
+            </ul>
+            <h3 class="list-vacany__title">Що для цього треба:</h3>
+            <ul class="vacancy-page__list list-vacany">
+              <li class="list-vacany__li text-big-r">Вільна румунська</li>
+              <li class="list-vacany__li text-big-r">Приємна зовнішність</li>
+              <li class="list-vacany__li text-big-r">Впевненість перед камерою</li>
+              <li class="list-vacany__li text-big-r">Бажання отримати крутий досвід</li>
+            </ul>
+            <h3 class="list-vacany__title">Що ми пропонуємо:</h3>
+            <ul class="vacancy-page__list list-vacany">
+              <li class="list-vacany__li text-big-r">Організація всіх необхідних процесів для зйомок</li>
+              <li class="list-vacany__li text-big-r">Гідна оплата</li>
+            </ul>
+          </div>
+        </section>
+        <section class="vacancy-form">
+          <div class="vacancy-form__container">
+            <h2 class="vacancy-form__title-main title-sec">Заповнюй анкету нижче 👇 👇 👇 👇 👇</h2>
+            <div class="vacancy-form__wrapper">
+              <span class="vacancy-form__puzzle puzzle-big puzzle-big_yellow puzzle-big__puzzle_top"></span>
+			        <span class="vacancy-form__puzzle puzzle-big puzzle-big_yellow puzzle-big__puzzle_rt"></span>
+			        <span class="vacancy-form__puzzle puzzle-big puzzle-big_yellow puzzle-big__puzzle_btm"></span>
+			        <span class="vacancy-form__puzzle puzzle-big puzzle-big_yellow puzzle-big__puzzle_lt"></span>
+              <div class="vacancy-form__title">Заповніть форму актуальної вакансії, щоб ми могли познайомитись!</div>
+              <form data-dev data-popup-message="#form-message-yellow" action="files/sendmail/sendmail.php" method="POST" class="form-two__form">
+                <div class="form__inputs">
+                  <div class="form__item">
+                    <input type="text" name="name" data-required data-validate data-error="Обов'язкове поле" placeholder="Ім’я" class="input">
+                  </div>
+                  <div class="form__item">
+                    <input type="text" name="surname" data-required data-validate data-error="Обов'язкове поле" placeholder="Прізвище" class="input">
+                  </div>
+                  <div class="form__item">
+                    <input type="tel" data-inputmask="'mask': '+38 099 999 99 99'" name="surname" data-required data-validate data-error="Обов'язкове поле" placeholder="+38 (0__) ___ __ __" class="input">
+                  </div>
+                  <div class="form__item">
+                    <input type="email" name="email" data-required data-validate data-error="Некоректний e-mail" placeholder="Email" class="input">
+                  </div>
+                  <div class="form__item">
+                    <input type="text" name="social" data-required data-validate data-error="Обов'язкове поле" placeholder="Соцмережі" class="input">
+                  </div>
+                  <div class="form__item">
+                    <input type="text" name="position" data-required data-validate data-error="Обов'язкове поле" placeholder="Посада" class="input">
+                  </div>
+                  <textarea name="description" placeholder="Опишіть себе одним реченням" class="input"></textarea>
+                  <div class="form__item">
+                    <input type="url" name="CV" data-required data-validate data-error="Обов'язкове поле" placeholder="Посилання на CV" class="input">
+                  </div>
+                </div>
+                <button type="submit" class="form__button">Відправити</button>
+              </form>
+            </div>
+          </div>
+        </section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>
