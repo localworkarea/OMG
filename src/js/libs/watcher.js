@@ -62,8 +62,6 @@ class ScrollWatcher {
 				// Ініціалізація спостерігача зі своїми налаштуваннями
 				this.scrollWatcherInit(groupItems, configWatcher);
 			});
-		} else {
-			this.scrollWatcherLogging("Сплю, немає об'єктів для стеження. ZzzZZzz");
 		}
 	}
 	// Функція створення налаштувань
@@ -73,13 +71,11 @@ class ScrollWatcher {
 		// Батько, у якому ведеться спостереження
 		if (document.querySelector(paramsWatch.root)) {
 			configWatcher.root = document.querySelector(paramsWatch.root);
-		} else if (paramsWatch.root !== 'null') {
-			this.scrollWatcherLogging(`Эмм... батьківського об'єкта ${paramsWatch.root} немає на сторінці`);
 		}
 		// Відступ спрацьовування
 		configWatcher.rootMargin = paramsWatch.margin;
 		if (paramsWatch.margin.indexOf('px') < 0 && paramsWatch.margin.indexOf('%') < 0) {
-			this.scrollWatcherLogging(`йой, налаштування data-watch-margin потрібно задавати в PX або %`);
+			
 			return
 		}
 		// Точки спрацьовування
@@ -117,21 +113,33 @@ class ScrollWatcher {
 			// Бачимо об'єкт
 			// Додаємо клас
 			!targetElement.classList.contains('_watcher-view') ? targetElement.classList.add('_watcher-view') : null;
+
+			
+			// if (targetElement.classList.contains('clients') ) {
+			// 	document.querySelector('.header').classList.add('_header-white');
+			// }
+			// if (targetElement.classList.contains('cases') ) {
+			// 	document.querySelector('.header').classList.add('_header-white-2');
+			// }
+
 		} else {
 			// Не бачимо об'єкт
 			// Забираємо клас
 			targetElement.classList.contains('_watcher-view') ? targetElement.classList.remove('_watcher-view') : null;
+
+			// if (targetElement.classList.contains('clients') ) {
+			// 	document.querySelector('.header').classList.remove('_header-white');
+			// }
+			// if (targetElement.classList.contains('cases') ) {
+			// 	document.querySelector('.header').classList.remove('_header-white-2');
+			// }
 		}
 	}
 	// Функція відключення стеження за об'єктом
 	scrollWatcherOff(targetElement, observer) {
 		observer.unobserve(targetElement);
-		this.scrollWatcherLogging(`Я перестав стежити за ${targetElement.classList}`);
 	}
-	// Функція виведення в консоль
-	scrollWatcherLogging(message) {
-		this.config.logging ? FLS(`[Спостерігач]: ${message}`) : null;
-	}
+
 	// Функція обробки спостереження
 	scrollWatcherCallback(entry, observer) {
 		const targetElement = entry.target;

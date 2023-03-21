@@ -184,10 +184,26 @@ textarea.input {
 		background-color: $mainColor;
 		color: white;
 		border-radius: rem(170);
+		border: rem(2) solid $mainColor;
 
 		font-weight: 700;
 		@include adaptiveValue("font-size", 20, 18);
 		line-height: calc(26/20);
+
+		transition: all 0.3s ease 0s;
+		&:hover {
+			background-color: transparent;
+			border-color: $gray;
+		}
+
+		.popup-form & {
+			&:hover {
+				background-color: transparent;
+				border-color: $mainColor;
+				color: $mainColor;
+			}
+		}
+
 		@media (max-width:$mobileSmall){
 			 max-width: 100%; 
 		}

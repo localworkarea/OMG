@@ -7630,93 +7630,171 @@
                 resume
             });
         }
+        function initSliders() {
+            if (document.querySelector(".clients__top-slider")) new core(".clients__top-slider", {
+                modules: [ Autoplay, Navigation ],
+                slidesPerView: "auto",
+                spaceBetween: 0,
+                speed: 1e3,
+                loop: true,
+                autoplay: {
+                    delay: 500,
+                    disableOnInteraction: false
+                }
+            });
+            if (document.querySelector(".clients__btm-slider")) new core(".clients__btm-slider", {
+                modules: [ Autoplay, Navigation ],
+                slidesPerView: "auto",
+                updateOnWindowResize: true,
+                spaceBetween: 0,
+                speed: 1e3,
+                loop: true,
+                autoplay: {
+                    delay: 500,
+                    disableOnInteraction: false
+                },
+                breakpoints: {
+                    280: {
+                        enabled: false
+                    },
+                    480: {
+                        enabled: true
+                    }
+                }
+            });
+            if (document.querySelector(".artist__body-slider")) new core(".artist__body-slider", {
+                modules: [ Navigation ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 2,
+                spaceBetween: 10,
+                speed: 500,
+                loop: true,
+                navigation: {
+                    prevEl: ".swiper-button-prev",
+                    nextEl: ".swiper-button-next"
+                },
+                breakpoints: {
+                    280: {
+                        slidesPerView: 1,
+                        spaceBetween: 0
+                    },
+                    480: {
+                        slidesPerView: 1,
+                        spaceBetween: 10
+                    },
+                    566: {
+                        slidesPerView: 2
+                    }
+                }
+            });
+            if (document.querySelector(".youtube__body-slider")) new core(".youtube__body-slider", {
+                modules: [ Navigation ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 2,
+                spaceBetween: 10,
+                speed: 500,
+                loop: true,
+                navigation: {
+                    prevEl: ".swiper-button-prev",
+                    nextEl: ".swiper-button-next"
+                },
+                breakpoints: {
+                    280: {
+                        slidesPerView: 1,
+                        spaceBetween: 0
+                    },
+                    480: {
+                        slidesPerView: 1,
+                        spaceBetween: 10
+                    },
+                    566: {
+                        slidesPerView: 2
+                    }
+                }
+            });
+            if (document.querySelector(".blogers__body-slider")) new core(".blogers__body-slider", {
+                modules: [ Navigation ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 2,
+                spaceBetween: 10,
+                speed: 500,
+                loop: true,
+                navigation: {
+                    prevEl: ".swiper-button-prev",
+                    nextEl: ".swiper-button-next"
+                },
+                breakpoints: {
+                    280: {
+                        slidesPerView: 1,
+                        spaceBetween: 0
+                    },
+                    480: {
+                        slidesPerView: 1,
+                        spaceBetween: 10
+                    },
+                    566: {
+                        slidesPerView: 2
+                    }
+                }
+            });
+            if (document.querySelector(".experts__body-slider")) new core(".experts__body-slider", {
+                modules: [ Navigation ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 2,
+                spaceBetween: 10,
+                speed: 500,
+                loop: true,
+                navigation: {
+                    prevEl: ".swiper-button-prev",
+                    nextEl: ".swiper-button-next"
+                },
+                breakpoints: {
+                    280: {
+                        slidesPerView: 1,
+                        spaceBetween: 0
+                    },
+                    480: {
+                        slidesPerView: 1,
+                        spaceBetween: 10
+                    },
+                    566: {
+                        slidesPerView: 2
+                    }
+                }
+            });
+            if (document.querySelector(".other-partners__slider")) new core(".other-partners__slider", {
+                modules: [ Navigation ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 2,
+                spaceBetween: 10,
+                speed: 500,
+                loop: true,
+                navigation: {
+                    prevEl: ".other-partners__slider .swiper-button-prev",
+                    nextEl: ".other-partners__slider .swiper-button-next"
+                },
+                breakpoints: {
+                    280: {
+                        slidesPerView: 1,
+                        spaceBetween: 0
+                    },
+                    480: {
+                        slidesPerView: 1,
+                        spaceBetween: 10
+                    },
+                    566: {
+                        slidesPerView: 2
+                    }
+                }
+            });
+        }
         window.addEventListener("load", (function(e) {
-            const breakpoint = window.matchMedia("(max-width:480px)");
-            let swiperClientsTop;
-            let swiperClientsBtm;
-            let swiperBodyArtists;
-            let swiperOtherPartners;
-            const breakpointChecker = function() {
-                if (true === breakpoint.matches) {
-                    if (void 0 !== swiperClientsTop) swiperClientsTop.destroy(true, true);
-                    if (void 0 !== swiperClientsBtm) swiperClientsBtm.destroy(true, true);
-                    if (void 0 !== swiperBodyArtists) swiperBodyArtists.destroy(true, true);
-                    if (void 0 !== swiperOtherPartners) swiperOtherPartners.destroy(true, true);
-                    return;
-                } else if (false === breakpoint.matches) return enableSwiper();
-            };
-            const enableSwiper = function() {
-                swiperClientsTop = new core(".clients__top-slider", {
-                    modules: [ Autoplay ],
-                    slidesPerView: "auto",
-                    spaceBetween: 0,
-                    speed: 1e3,
-                    loop: true,
-                    autoplay: {
-                        delay: 500,
-                        disableOnInteraction: false
-                    }
-                });
-                swiperClientsBtm = new core(".clients__btm-slider", {
-                    modules: [ Autoplay ],
-                    slidesPerView: "auto",
-                    spaceBetween: 0,
-                    speed: 1e3,
-                    loop: true,
-                    autoplay: {
-                        delay: 500,
-                        disableOnInteraction: false
-                    }
-                });
-                swiperBodyArtists = new core(".media__body-slider", {
-                    modules: [ Navigation ],
-                    observer: true,
-                    observeParents: true,
-                    slidesPerView: 2,
-                    spaceBetween: 10,
-                    speed: 500,
-                    loop: true,
-                    navigation: {
-                        prevEl: ".media__tabs .swiper-button-prev",
-                        nextEl: ".media__tabs .swiper-button-next"
-                    },
-                    breakpoints: {
-                        280: {
-                            slidesPerView: 1,
-                            spaceBetween: 0
-                        },
-                        566: {
-                            slidesPerView: 2,
-                            spaceBetween: 10
-                        }
-                    }
-                });
-                swiperOtherPartners = new core(".other-partners__slider", {
-                    modules: [ Navigation ],
-                    observer: true,
-                    observeParents: true,
-                    slidesPerView: 2,
-                    spaceBetween: 10,
-                    speed: 500,
-                    loop: true,
-                    navigation: {
-                        prevEl: ".other-partners__slider .swiper-button-prev",
-                        nextEl: ".other-partners__slider .swiper-button-next"
-                    },
-                    breakpoints: {
-                        280: {
-                            slidesPerView: 1,
-                            spaceBetween: 0
-                        },
-                        566: {
-                            slidesPerView: 2,
-                            spaceBetween: 10
-                        }
-                    }
-                });
-            };
-            breakpoint.addListener(breakpointChecker);
-            breakpointChecker();
+            initSliders();
         }));
         var can_use_dom = __webpack_require__(807);
         function isObject_isObject(value) {
@@ -8714,16 +8792,13 @@
                         let configWatcher = this.getScrollWatcherConfig(paramsWatch);
                         this.scrollWatcherInit(groupItems, configWatcher);
                     }));
-                } else this.scrollWatcherLogging("Сплю, немає об'єктів для стеження. ZzzZZzz");
+                }
             }
             getScrollWatcherConfig(paramsWatch) {
                 let configWatcher = {};
-                if (document.querySelector(paramsWatch.root)) configWatcher.root = document.querySelector(paramsWatch.root); else if ("null" !== paramsWatch.root) this.scrollWatcherLogging(`Эмм... батьківського об'єкта ${paramsWatch.root} немає на сторінці`);
+                if (document.querySelector(paramsWatch.root)) configWatcher.root = document.querySelector(paramsWatch.root);
                 configWatcher.rootMargin = paramsWatch.margin;
-                if (paramsWatch.margin.indexOf("px") < 0 && paramsWatch.margin.indexOf("%") < 0) {
-                    this.scrollWatcherLogging(`йой, налаштування data-watch-margin потрібно задавати в PX або %`);
-                    return;
-                }
+                if (paramsWatch.margin.indexOf("px") < 0 && paramsWatch.margin.indexOf("%") < 0) return;
                 if ("prx" === paramsWatch.threshold) {
                     paramsWatch.threshold = [];
                     for (let i = 0; i <= 1; i += .005) paramsWatch.threshold.push(i);
@@ -8747,10 +8822,6 @@
             }
             scrollWatcherOff(targetElement, observer) {
                 observer.unobserve(targetElement);
-                this.scrollWatcherLogging(`Я перестав стежити за ${targetElement.classList}`);
-            }
-            scrollWatcherLogging(message) {
-                this.config.logging ? FLS(`[Спостерігач]: ${message}`) : null;
             }
             scrollWatcherCallback(entry, observer) {
                 const targetElement = entry.target;

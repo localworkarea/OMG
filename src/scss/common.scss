@@ -83,18 +83,28 @@
 
   cursor: pointer;
   &_purple {
-    color: #7C43FF;
-    border-color: #7C43FF;
+    color: $_6D37FF;
+    border-color: $_6D37FF;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      background-color: $_6D37FF;
+      color: $gray;
+    }
   }
   &_black {
     border-color: $mainColor;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      background-color: $mainColor;
+      color: $gray;
+    }
     .dark & {
       border-color: $gray;
     }
   }
-  &:hover {
-    opacity: 0.7;
-  }
+  // &:hover {
+  //   opacity: 0.7;
+  // }
 }
 
 .btn-tab {
@@ -975,7 +985,6 @@
     height: rem(10);
     border-radius: 50%;
     border: rem(2) solid white;
-    // transform: rotate(45deg);
     transition: all 0.6s ease 0s;
     .dark & {
       border-color: #4B4B4B;
@@ -985,8 +994,8 @@
       height: rem(16);
       border-radius: 0;
       border: rem(0);
-      // transform: rotate(90deg);
       background-color: $mainColor;
+      border: rem(1) solid $gray;
       .dark & {
         background-color: $gray;
       }
