@@ -31,7 +31,6 @@ class ScrollWatcher {
 	// Конструктор спостерігачів
 	scrollWatcherConstructor(items) {
 		if (items.length) {
-			this.scrollWatcherLogging(`Прокинувся, стежу за об'єктами (${items.length})...`);
 			// Унікалізуємо параметри
 			let uniqParams = uniqArray(Array.from(items).map(function (item) {
 				return `${item.dataset.watchRoot ? item.dataset.watchRoot : null}|${item.dataset.watchMargin ? item.dataset.watchMargin : '0px'}|${item.dataset.watchThreshold ? item.dataset.watchThreshold : 0}`;
@@ -118,12 +117,10 @@ class ScrollWatcher {
 			// Бачимо об'єкт
 			// Додаємо клас
 			!targetElement.classList.contains('_watcher-view') ? targetElement.classList.add('_watcher-view') : null;
-			this.scrollWatcherLogging(`Я бачу ${targetElement.classList}, додав клас _watcher-view`);
 		} else {
 			// Не бачимо об'єкт
 			// Забираємо клас
 			targetElement.classList.contains('_watcher-view') ? targetElement.classList.remove('_watcher-view') : null;
-			this.scrollWatcherLogging(`Я не бачу ${targetElement.classList}, прибрав клас _watcher-view`);
 		}
 	}
 	// Функція відключення стеження за об'єктом
