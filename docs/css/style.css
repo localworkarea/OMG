@@ -2066,397 +2066,170 @@ body::after {
 }
 
 .hovers {
-  color: #EAEAEA;
-  height: 23.75rem;
-  min-height: 100%;
-  overflow: hidden;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  opacity: 0;
+  margin-bottom: 4.375rem;
 }
 
-.loaded .hovers {
-  opacity: 1;
-  -webkit-transition: opacity 0.8s cubic-bezier(0.55, 0.085, 0, 0.99) 0.7s;
-  -o-transition: opacity 0.8s cubic-bezier(0.55, 0.085, 0, 0.99) 0.7s;
-  transition: opacity 0.8s cubic-bezier(0.55, 0.085, 0, 0.99) 0.7s;
+.hovers.hovers__sec .hovers__item.item-first-hover:hover {
+  -webkit-box-flex: 30;
+      -ms-flex: 30;
+          flex: 30;
 }
 
-.hovers__main {
-  width: 40%;
+.hovers.hovers__sec .hovers__item:nth-child(2) {
+  background-color: #2C1483;
+}
+
+.hovers.hovers__sec .hovers__item:nth-child(3) {
+  background-color: #3A14BF;
+}
+
+.hovers.hovers__sec .hovers__item:nth-child(4) {
+  background-color: #8351F2;
+}
+
+.hovers.hovers__sec .hovers__item:nth-child(5) {
+  background-color: #A988F1;
+}
+
+.hovers.hovers__sec .hovers__item:nth-child(6) {
+  background-color: #F29F05;
+}
+
+.hovers.hovers__sec .hovers__item:nth-child(7) {
+  background-color: #F2CB04;
 }
 
 .hovers__items {
+  position: relative;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 60%;
+  width: 100%;
+  height: 23.75rem;
+  -webkit-transition: flex-grow 0.5s ease-in-out, -webkit-box-flex 0.5s ease-in-out;
+  transition: flex-grow 0.5s ease-in-out, -webkit-box-flex 0.5s ease-in-out;
+  -o-transition: flex-grow 0.5s ease-in-out;
+  transition: flex-grow 0.5s ease-in-out;
+  transition: flex-grow 0.5s ease-in-out, -webkit-box-flex 0.5s ease-in-out, -ms-flex-positive 0.5s ease-in-out;
 }
 
-.hovers__wrapper {
+.hovers__items:hover .item-first-hover {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.hovers__items .hovers__first {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 39%;
+  width: 0%;
   height: 100%;
+  background-color: black;
+  color: white;
+  opacity: 0;
+  z-index: 3;
+  -webkit-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
 }
 
 .hovers__item {
-  width: 16.666%;
-  height: 100%;
-  background-color: #6D37FF;
-  border: 0.0625rem solid #EAEAEA;
-  position: relative;
-  z-index: 1;
-  -webkit-transition: z-index 0.5s linear 0s;
-  -o-transition: z-index 0.5s linear 0s;
-  transition: z-index 0.5s linear 0s;
-}
-
-.hovers__item .circle-deco {
-  position: absolute;
-  top: 50%;
-  left: -17%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 2.125rem;
-  height: 2.125rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  pointer-events: none;
-}
-
-.hovers__item .circle-deco::after {
-  content: "";
-  overflow: hidden;
-  z-index: 2;
-  height: 2rem;
-  width: 2rem;
-  border-radius: 50%;
-  border: 0.0625rem solid #EAEAEA;
-}
-
-.hovers__item .circle-deco::before {
-  content: "";
-  position: absolute;
-  z-index: 3;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 1.0625rem;
+  border: 0.125rem solid #EAEAEA;
+  color: #EAEAEA;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: 0;
+  -webkit-transition: flex-grow 0.5s ease-in-out 0s, -webkit-box-flex 0.5s ease-in-out 0s;
+  transition: flex-grow 0.5s ease-in-out 0s, -webkit-box-flex 0.5s ease-in-out 0s;
+  -o-transition: flex-grow 0.5s ease-in-out 0s;
+  transition: flex-grow 0.5s ease-in-out 0s;
+  transition: flex-grow 0.5s ease-in-out 0s, -webkit-box-flex 0.5s ease-in-out 0s, -ms-flex-positive 0.5s ease-in-out 0s;
 }
 
 .hovers__item:hover {
-  z-index: 2;
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
   -webkit-transition-delay: 0s;
        -o-transition-delay: 0s;
           transition-delay: 0s;
 }
 
-.hovers__item:hover:nth-child(6) .item-hov__content {
-  border-radius: 100px 0px 0px 0px;
+.hovers__item.item-first-hover {
+  position: relative;
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  background-color: #000;
 }
 
-.hovers__item:hover .item-hov__content {
-  pointer-events: all;
-  width: 408%;
-  border-radius: 0px 6.25rem 0px 0px;
+.hovers__item.item-first-hover:hover {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+}
+
+.hovers__item.item-first-hover:hover ~ .hovers__first {
+  width: 61%;
+  -webkit-transition-delay: 0.3s;
+       -o-transition-delay: 0.3s;
+          transition-delay: 0.3s;
   opacity: 1;
-}
-
-.hovers__item:hover .item-hov__content .title-hov {
-  -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-          transform: translateY(0);
-}
-
-.hovers__item:hover .item-hov__content .circle-deco {
-  opacity: 1;
-  -webkit-transition: opacity 0s ease 0.5s;
-  -o-transition: opacity 0s ease 0.5s;
-  transition: opacity 0s ease 0.5s;
-}
-
-.hovers__item:hover .item-hov__body {
-  opacity: 1;
-  -webkit-transition-delay: 0.5s;
-       -o-transition-delay: 0.5s;
-          transition-delay: 0.5s;
-}
-
-.hovers__item:hover .item-hov__txt {
-  -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-          transform: translateY(0);
-  opacity: 1;
-  -webkit-transition: opacity 0.6s ease 0.7s, -webkit-transform 0.55s ease 0.7s;
-  transition: opacity 0.6s ease 0.7s, -webkit-transform 0.55s ease 0.7s;
-  -o-transition: transform 0.55s ease 0.7s, opacity 0.6s ease 0.7s;
-  transition: transform 0.55s ease 0.7s, opacity 0.6s ease 0.7s;
-  transition: transform 0.55s ease 0.7s, opacity 0.6s ease 0.7s, -webkit-transform 0.55s ease 0.7s;
-}
-
-.hovers__item:hover .item-hov__btn {
-  -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-          transform: translateY(0);
-  opacity: 1;
-  -webkit-transition: opacity 0.6s ease 0.8s, -webkit-transform 0.55s ease 0.8s;
-  transition: opacity 0.6s ease 0.8s, -webkit-transform 0.55s ease 0.8s;
-  -o-transition: transform 0.55s ease 0.8s, opacity 0.6s ease 0.8s;
-  transition: transform 0.55s ease 0.8s, opacity 0.6s ease 0.8s;
-  transition: transform 0.55s ease 0.8s, opacity 0.6s ease 0.8s, -webkit-transform 0.55s ease 0.8s;
-}
-
-.hovers__item:nth-child(1) {
-  background-color: #2C1483;
-  opacity: 0;
-  -webkit-transform: translateX(70px);
-      -ms-transform: translateX(70px);
-          transform: translateX(70px);
-}
-
-.loaded .hovers__item:nth-child(1) {
-  opacity: 1;
-  -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
-          transform: translateX(0);
-  -webkit-transition: opacity 0.8s ease 0.7s, -webkit-transform 0.8s ease 0.7s;
-  transition: opacity 0.8s ease 0.7s, -webkit-transform 0.8s ease 0.7s;
-  -o-transition: opacity 0.8s ease 0.7s, transform 0.8s ease 0.7s;
-  transition: opacity 0.8s ease 0.7s, transform 0.8s ease 0.7s;
-  transition: opacity 0.8s ease 0.7s, transform 0.8s ease 0.7s, -webkit-transform 0.8s ease 0.7s;
-}
-
-.hovers__item:nth-child(1) .circle-deco::after {
-  background-color: #2C1483;
-}
-
-.hovers__item:nth-child(1) .circle-deco::before {
-  background-color: #2C1483;
-}
-
-.hovers__item:nth-child(1) .item-hov__content {
-  background-color: #2C1483;
-}
-
-.hovers__item:nth-child(1) .item-hov__btn {
-  background-color: #2C1483;
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-.hovers__item:nth-child(2) {
-  background-color: #3A14BF;
-  opacity: 0;
-  -webkit-transform: translateX(70px);
-      -ms-transform: translateX(70px);
-          transform: translateX(70px);
-}
-
-.loaded .hovers__item:nth-child(2) {
-  opacity: 1;
-  -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
-          transform: translateX(0);
-  -webkit-transition: opacity 0.8s ease 0.8s, -webkit-transform 0.8s ease 0.8s;
-  transition: opacity 0.8s ease 0.8s, -webkit-transform 0.8s ease 0.8s;
-  -o-transition: opacity 0.8s ease 0.8s, transform 0.8s ease 0.8s;
-  transition: opacity 0.8s ease 0.8s, transform 0.8s ease 0.8s;
-  transition: opacity 0.8s ease 0.8s, transform 0.8s ease 0.8s, -webkit-transform 0.8s ease 0.8s;
-}
-
-.hovers__item:nth-child(2) .circle-deco::after {
-  background-color: #3A14BF;
-}
-
-.hovers__item:nth-child(2) .circle-deco::before {
-  background-color: #3A14BF;
-}
-
-.hovers__item:nth-child(2) .item-hov__content {
-  background-color: #3A14BF;
-}
-
-.hovers__item:nth-child(2) .item-hov__txt li {
-  list-style: disc;
-  margin-left: 6%;
-}
-
-.hovers__item:nth-child(2) .item-hov__btn {
-  background-color: #3A14BF;
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
 }
 
 .hovers__item:nth-child(3) {
-  background-color: #8351F2;
-  opacity: 0;
-  -webkit-transform: translateX(70px);
-      -ms-transform: translateX(70px);
-          transform: translateX(70px);
-}
-
-.loaded .hovers__item:nth-child(3) {
-  opacity: 1;
-  -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
-          transform: translateX(0);
-  -webkit-transition: opacity 0.8s ease 0.9s, -webkit-transform 0.8s ease 0.9s;
-  transition: opacity 0.8s ease 0.9s, -webkit-transform 0.8s ease 0.9s;
-  -o-transition: opacity 0.8s ease 0.9s, transform 0.8s ease 0.9s;
-  transition: opacity 0.8s ease 0.9s, transform 0.8s ease 0.9s;
-  transition: opacity 0.8s ease 0.9s, transform 0.8s ease 0.9s, -webkit-transform 0.8s ease 0.9s;
-}
-
-.hovers__item:nth-child(3) .circle-deco::after {
-  background-color: #8351F2;
-}
-
-.hovers__item:nth-child(3) .circle-deco::before {
-  background-color: #8351F2;
-}
-
-.hovers__item:nth-child(3) .item-hov__content {
-  background-color: #8351F2;
-}
-
-.hovers__item:nth-child(3) .item-hov__btn {
-  background-color: #8351F2;
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  background-color: #2C1483;
 }
 
 .hovers__item:nth-child(4) {
-  background-color: #A988F1;
-  opacity: 0;
-  -webkit-transform: translateX(70px);
-      -ms-transform: translateX(70px);
-          transform: translateX(70px);
-}
-
-.loaded .hovers__item:nth-child(4) {
-  opacity: 1;
-  -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
-          transform: translateX(0);
-  -webkit-transition: opacity 0.8s ease 1s, -webkit-transform 0.8s ease 1s;
-  transition: opacity 0.8s ease 1s, -webkit-transform 0.8s ease 1s;
-  -o-transition: opacity 0.8s ease 1s, transform 0.8s ease 1s;
-  transition: opacity 0.8s ease 1s, transform 0.8s ease 1s;
-  transition: opacity 0.8s ease 1s, transform 0.8s ease 1s, -webkit-transform 0.8s ease 1s;
-}
-
-.hovers__item:nth-child(4) .circle-deco::after {
-  background-color: #A988F1;
-}
-
-.hovers__item:nth-child(4) .circle-deco::before {
-  background-color: #A988F1;
-}
-
-.hovers__item:nth-child(4) .item-hov__content {
-  background-color: #A988F1;
-  left: -205%;
-}
-
-.hovers__item:nth-child(4) .item-hov__btn {
-  background-color: #A988F1;
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  background-color: #3A14BF;
 }
 
 .hovers__item:nth-child(5) {
-  background-color: #F29F05;
-  opacity: 0;
-  -webkit-transform: translateX(70px);
-      -ms-transform: translateX(70px);
-          transform: translateX(70px);
-}
-
-.loaded .hovers__item:nth-child(5) {
-  opacity: 1;
-  -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
-          transform: translateX(0);
-  -webkit-transition: opacity 0.8s ease 1.1s, -webkit-transform 0.8s ease 1.1s;
-  transition: opacity 0.8s ease 1.1s, -webkit-transform 0.8s ease 1.1s;
-  -o-transition: opacity 0.8s ease 1.1s, transform 0.8s ease 1.1s;
-  transition: opacity 0.8s ease 1.1s, transform 0.8s ease 1.1s;
-  transition: opacity 0.8s ease 1.1s, transform 0.8s ease 1.1s, -webkit-transform 0.8s ease 1.1s;
-}
-
-.hovers__item:nth-child(5) .circle-deco::after {
-  background-color: #F29F05;
-}
-
-.hovers__item:nth-child(5) .circle-deco::before {
-  background-color: #F29F05;
-}
-
-.hovers__item:nth-child(5) .item-hov__content {
-  background-color: #F29F05;
-  left: -205%;
-}
-
-.hovers__item:nth-child(5) .item-hov__btn {
-  background-color: #F29F05;
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  background-color: #8351F2;
 }
 
 .hovers__item:nth-child(6) {
-  background-color: #F2CB04;
-  color: #000;
-  opacity: 0;
-  -webkit-transform: translateX(70px);
-      -ms-transform: translateX(70px);
-          transform: translateX(70px);
+  background-color: #A988F1;
 }
 
-.loaded .hovers__item:nth-child(6) {
-  opacity: 1;
-  -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
-          transform: translateX(0);
-  -webkit-transition: opacity 0.8s ease 1.2s, -webkit-transform 0.8s ease 1.2s;
-  transition: opacity 0.8s ease 1.2s, -webkit-transform 0.8s ease 1.2s;
-  -o-transition: opacity 0.8s ease 1.2s, transform 0.8s ease 1.2s;
-  transition: opacity 0.8s ease 1.2s, transform 0.8s ease 1.2s;
-  transition: opacity 0.8s ease 1.2s, transform 0.8s ease 1.2s, -webkit-transform 0.8s ease 1.2s;
+.hovers__item:nth-child(7) {
+  background-color: #F29F05;
 }
 
-.hovers__item:nth-child(6) .circle-deco::after {
+.hovers__item:nth-child(8) {
   background-color: #F2CB04;
 }
 
-.hovers__item:nth-child(6) .circle-deco::before {
-  background-color: #F2CB04;
-}
-
-.hovers__item:nth-child(6) .item-hov__content {
-  background-color: #F2CB04;
-  left: -307%;
-}
-
-.hovers__item:nth-child(6) .item-hov__btn {
-  border-color: #000;
-  color: #000;
-  background-color: #F2CB04;
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+.hovers__content {
+  width: 100%;
+  text-align: center;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main-hov {
@@ -7253,10 +7026,6 @@ body::after {
 }
 
 @media (max-width: 1350px) {
-  .hovers__item .circle-deco {
-    left: -19%;
-  }
-
   .item-hov__content .circle-deco {
     left: -5%;
   }
@@ -7289,10 +7058,6 @@ body::after {
 }
 
 @media (max-width: 1280px) {
-  .hovers {
-    height: 21.0625rem;
-  }
-
   .main-hov__wrapp {
     padding: 2.6875rem 2.25rem 2.375rem;
     left: -3%;
@@ -7320,18 +7085,6 @@ body::after {
 @media (max-width: 1100px) {
   .form_radius {
     border-radius: 0 12.5rem 0 0;
-  }
-
-  .hovers__item .circle-deco {
-    left: -22%;
-  }
-
-  .hovers__item:hover:nth-child(6) .item-hov__content {
-    border-radius: 90px 0px 0px 0px;
-  }
-
-  .hovers__item:hover .item-hov__content {
-    border-radius: 0px 5.625rem 0px 0px;
   }
 
   .main-hov__com {
@@ -7642,12 +7395,6 @@ body::after {
     -webkit-column-gap: 1.5625rem;
        -moz-column-gap: 1.5625rem;
             column-gap: 1.5625rem;
-  }
-}
-
-@media (max-width: 730px) {
-  .hovers {
-    display: none;
   }
 }
 
@@ -9562,35 +9309,6 @@ body::after {
 
   .main {
     margin-top: 6.25rem;
-  }
-
-  .hovers__item .circle-deco {
-    left: -24%;
-  }
-
-  .hovers__item:nth-child(2) .title-hov__icon {
-    width: 48px;
-    height: 26px;
-  }
-
-  .hovers__item:nth-child(3) .title-hov__icon {
-    width: 44px;
-    height: 28px;
-  }
-
-  .hovers__item:nth-child(4) .title-hov__icon {
-    width: 55px;
-    height: auto;
-  }
-
-  .hovers__item:nth-child(5) .title-hov__icon {
-    width: 49px;
-    height: auto;
-  }
-
-  .hovers__item:nth-child(6) .title-hov__icon {
-    width: 33px;
-    height: auto;
   }
 
   .main-hov__com {
@@ -13797,37 +13515,6 @@ body::after {
 
   .arrow-up__btn:hover {
     opacity: 0.7;
-  }
-
-  .hovers__item:nth-child(1) .item-hov__btn:hover {
-    background-color: #EAEAEA;
-    color: #000;
-  }
-
-  .hovers__item:nth-child(2) .item-hov__btn:hover {
-    background-color: #EAEAEA;
-    color: #000;
-  }
-
-  .hovers__item:nth-child(3) .item-hov__btn:hover {
-    background-color: #EAEAEA;
-    color: #000;
-  }
-
-  .hovers__item:nth-child(4) .item-hov__btn:hover {
-    background-color: #EAEAEA;
-    color: #000;
-  }
-
-  .hovers__item:nth-child(5) .item-hov__btn:hover {
-    background-color: #EAEAEA;
-    color: #000;
-  }
-
-  .hovers__item:nth-child(6) .item-hov__btn:hover {
-    background-color: #EAEAEA;
-    color: #000;
-    border-color: #EAEAEA;
   }
 
   .media-why__item:hover {
