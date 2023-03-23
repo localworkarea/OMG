@@ -125,7 +125,7 @@
 //   overflow: hidden;
 //   position: relative;
 //   display: flex;
-
+//   margin-bottom: rem(70);
 //   opacity: 0;
 //   .loaded & {
 //     opacity: 1;
@@ -488,124 +488,327 @@
 //   }
 // }
 
-.hovers {
-  margin-bottom: rem(70);
-  &.hovers__sec {
-    .hovers__item {
-      &.item-first-hover {
-        &:hover {
-          flex: 30;
-        }
-      }
-      &:nth-child(2){
-        background-color: $_2C1483;
-      }
-      &:nth-child(3){
-        background-color: $_3A14BF;
-      }
-      &:nth-child(4){
-        background-color: $_8351F2;
-      }
-      &:nth-child(5){
-        background-color: $_A988F1;
-      }
-      &:nth-child(6){
-        background-color: $_F29F05;
-      }
-      &:nth-child(7){
-        background-color: $_F2CB04;
-      }
-    }
-  }
-  // .hovers__container
-  &__container {
-  }
-  // .hovers__items
-  &__items {
+.main-hovers {
+  display: flex;
+  height: rem(380);
+  overflow: hidden;
+  border: rem(1) solid $gray;
+	// .main-hovers__main
+	&__main {
+    width: 67%;
+    background-color: $mainColor;
+    border: rem(2) solid $gray;
+    display: flex;
     position: relative;
-    overflow: hidden;
+    transition: all 0.64s ease-in-out;
+    &._hover-items {
+     width: 10%;
+     .omg-title-big {
+      opacity: 0;
+      transition: opacity 0.64s ease 0s;
+     }
+    }
+    &:hover {
+     .main-hovers__omg-hover {
+       width: 150%;
+       opacity: 1;
+       visibility: visible;
+       transition: opacity 0.3s ease 0s, width 0.64s ease-in-out, visibility 0.64s ease-in-out;
+     }
+     .omg-hover__body {
+      opacity: 1;
+      visibility: visible;
+      transition: all 0.4s ease 0.3s;
+     }
+     .omg-hover__title {
+
+     }
+     .omg-hover__info {
+      transform: translateX(0);
+      transition: transform 0.7s ease 0.5s;
+     }
+    .omg-title-big {
+      transform: rotate(90deg);
+      transition: transform 0.64s ease 0.5s, opacity 0.64s ease 0.5s;
+     }
+    }
+	}
+  // .main-hovers__items
+  &__items {
     display: flex;
     width: 100%;
-    height: rem(380);
-    transition: flex-grow 0.5s ease-in-out;
-    &:hover {
-      .item-first-hover {
-        flex: 1;
-      }
-    }
-    .hovers__first {
-          position: absolute;
-          display: block;
-          top: 0;
-          left: 39%;
-          width: 0%;
-          height: 100%;
-          background-color: black;
-          color: white;
-          opacity: 0;
-          z-index: 3;
-         
-          transition: all 0.7s ease-in-out;
-    }
+    height: 100%;
   }
-  // .hovers__item
+  // .main-hovers__item
   &__item {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
     border: rem(2) solid $gray;
-    color: $gray;
     flex: 1;
     min-width: 0;
-    transition: flex-grow 0.5s ease-in-out 0s;
+    position: relative;
+    transition: flex-grow 0.64s ease-in-out 0s;
     &:hover {
       flex: 4;
-      transition-delay: 0s;
-    }
-    &.item-first-hover {
-      position: relative;
-      flex: 4;
-      background-color: $mainColor;
-      &:hover {
-        flex: 4;
-        ~ .hovers__first {
-          width: 61%;
-          transition-delay: 0.3s;
-         opacity: 1;
-        }
+      .title-hovers {
+        opacity: 0;
+        visibility: hidden;
+        transition-delay: 0s;
+      }
+      .content-hovers {
+        opacity: 1;
+        visibility: visible;
+       transition: all 0.5s ease 0.5s;
       }
     }
-    &:nth-child(3){
+ 
+    &:nth-child(1){
       background-color: $_2C1483;
     }
-    &:nth-child(4){
+    &:nth-child(2){
       background-color: $_3A14BF;
     }
-    &:nth-child(5){
+    &:nth-child(3){
       background-color: $_8351F2;
     }
-    &:nth-child(6){
+    &:nth-child(4){
       background-color: $_A988F1;
     }
-    &:nth-child(7){
+    &:nth-child(5){
       background-color: $_F29F05;
     }
-    &:nth-child(8){
+    &:nth-child(6){
       background-color: $_F2CB04;
+        .content-hovers__name,
+        .content-hovers__info,
+        .title-hovers__name {
+          color: $mainColor;
+        }
+        .content-hovers__btn {
+          color: $mainColor;
+          border-color: $mainColor;
+          &:hover {
+            border-color: $gray;
+          }
+        }
     }
   }
-  // .hovers__content
-  &__content {
-    width: 100%;
-    text-align: center;
-    writing-mode: vertical-rl;
+}
 
+.omg-title-sm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding-bottom: rem(22);
+
+  transition: all 0.4s ease 0.3s;
+
+  opacity: 0;
+  visibility: hidden;
+  
+  ._hover-items & {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  // .omg-title-sm__name
+  &__name {
+    color: $gray;
+    font-weight: 700;
+    font-size: rem(24);
+    line-height: calc(26/24);
+    text-transform: uppercase;
+    
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+  // .omg-title-sm__image
+  &__image {
+    height: rem(148);
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+  }
+  // .omg-title-sm__icon
+  &__icon {
   }
 }
+.omg-title-big {
+   position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    padding: rem(15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition: opacity 0.64s ease 0.5s, transform 0.64s ease 0s;
+
+    &:hover {
+      // opacity: 1;
+      // transition: opacity 0.64 ease 0.5s;
+    }
+
+		// .omg-title-big__body
+    &__body {}
+		// .omg-title-big__agency
+		&__agency {
+      color: $gray;
+      font-weight: 700;
+      font-size: rem(30);
+      line-height: calc(34/30);
+      text-transform: uppercase;
+		}
+		// .omg-title-big__omg
+		&__omg {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+
+        color: $gray;
+        font-weight: 800;
+        font-size: rem(118);
+        line-height:calc(100/118);
+		}
+}
+.omg-hover {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2;
+  height: 100%;
+  background-color: $mainColor;
+  padding: rem(40) rem(40) rem(40) rem(0);
+
+  transition: opacity 0.3s ease 0.3s, width 0.64s ease-in-out, visibility 0.64s ease-in-out;
+  
+		// .omg-hover__body
+		&__body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      overflow: hidden;
+
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease 0s;
+		}
+		// .omg-hover__title
+		&__title {
+      color: $_FFE319;
+      font-weight: 700;
+      font-size: rem(40);
+      line-height: calc(51/40);
+
+     
+		}
+		// .omg-hover__info
+		&__info {
+      color: $gray;
+      font-weight: 400;
+      font-size: rem(20);
+      line-height: calc(26/20);
+      max-width: rem(435);
+
+      transform: translateX(-100%);
+      transition: transform 0.7s ease 0s;
+      span {
+        font-weight: 600;
+      }
+		}
+}
+
+
+.title-hovers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding-bottom: rem(22);
+
+  transition: all 0.4s ease 0.5s;
+  // .title-hovers__image
+  &__image {
+    height: rem(95);
+    display: flex;
+    align-items: flex-end;
+  }
+  // .title-hovers__icon
+  &__icon {
+  }
+  // .title-hovers__name
+  &__name {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+
+    color: $gray;
+    font-weight: 600;
+    font-size: rem(20);
+    line-height: calc(23/20);
+  }
+}
+.content-hovers {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+  row-gap: rem(30);
+  height: 100%;
+  
+  transition: all 0.2s ease 0s;
+
+  // .content-hovers__head
+  &__head {
+    display: flex;
+    align-items: center;
+    column-gap: rem(35);
+
+  }
+  // .content-hovers__image
+  &__image {
+  }
+  // .content-hovers__icon
+  &__icon {
+  }
+  // .content-hovers__name
+  &__name {
+    color: $gray;
+    font-weight: 600;
+    font-size: rem(20);
+    line-height: calc(23/20);
+  }
+  // .content-hovers__info
+  &__info {
+    color: $gray;
+    font-weight: 400;
+    font-size: rem(16);
+    line-height: calc(19/16);
+    flex: 1;
+  }
+  // .content-hovers__btn
+  &__btn {
+    color: $gray;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      background-color: $gray;
+      color: $mainColor;
+    }
+  }
+}
+
 
 
 .main-hov {

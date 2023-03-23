@@ -8630,6 +8630,15 @@
         sections.forEach((section => {
             observer.observe(section);
         }));
+        const hoverItems = document.querySelector(".main-hovers__items");
+        const hoverMain = document.querySelector(".main-hovers__main");
+        hoverItems.addEventListener("mouseenter", (function(e) {
+            hoverMain.classList.add("_hover-items");
+        }));
+        hoverItems.addEventListener("mouseleave", (function(e) {
+            console.log("by");
+            hoverMain.classList.remove("_hover-items");
+        }));
         window["FLS"] = true;
         isWebp();
         addTouchClass();

@@ -2065,78 +2065,165 @@ body::after {
           filter: invert(32%) sepia(0%) saturate(353%) hue-rotate(189deg) brightness(92%) contrast(100%);
 }
 
-.hovers {
-  margin-bottom: 4.375rem;
-}
-
-.hovers.hovers__sec .hovers__item.item-first-hover:hover {
-  -webkit-box-flex: 30;
-      -ms-flex: 30;
-          flex: 30;
-}
-
-.hovers.hovers__sec .hovers__item:nth-child(2) {
-  background-color: #2C1483;
-}
-
-.hovers.hovers__sec .hovers__item:nth-child(3) {
-  background-color: #3A14BF;
-}
-
-.hovers.hovers__sec .hovers__item:nth-child(4) {
-  background-color: #8351F2;
-}
-
-.hovers.hovers__sec .hovers__item:nth-child(5) {
-  background-color: #A988F1;
-}
-
-.hovers.hovers__sec .hovers__item:nth-child(6) {
-  background-color: #F29F05;
-}
-
-.hovers.hovers__sec .hovers__item:nth-child(7) {
-  background-color: #F2CB04;
-}
-
-.hovers__items {
-  position: relative;
+.main-hovers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 23.75rem;
   overflow: hidden;
+  border: 0.0625rem solid #EAEAEA;
+}
+
+.main-hovers__main {
+  width: 67%;
+  background-color: #000;
+  border: 0.125rem solid #EAEAEA;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-transition: all 0.64s ease-in-out;
+  -o-transition: all 0.64s ease-in-out;
+  transition: all 0.64s ease-in-out;
+}
+
+.main-hovers__main._hover-items {
+  width: 10%;
+}
+
+.main-hovers__main._hover-items .omg-title-big {
+  opacity: 0;
+  -webkit-transition: opacity 0.64s ease 0s;
+  -o-transition: opacity 0.64s ease 0s;
+  transition: opacity 0.64s ease 0s;
+}
+
+.main-hovers__main:hover .main-hovers__omg-hover {
+  width: 150%;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.3s ease 0s, width 0.64s ease-in-out, visibility 0.64s ease-in-out;
+  -o-transition: opacity 0.3s ease 0s, width 0.64s ease-in-out, visibility 0.64s ease-in-out;
+  transition: opacity 0.3s ease 0s, width 0.64s ease-in-out, visibility 0.64s ease-in-out;
+}
+
+.main-hovers__main:hover .omg-hover__body {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.4s ease 0.3s;
+  -o-transition: all 0.4s ease 0.3s;
+  transition: all 0.4s ease 0.3s;
+}
+
+.main-hovers__main:hover .omg-hover__info {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.7s ease 0.5s;
+  transition: -webkit-transform 0.7s ease 0.5s;
+  -o-transition: transform 0.7s ease 0.5s;
+  transition: transform 0.7s ease 0.5s;
+  transition: transform 0.7s ease 0.5s, -webkit-transform 0.7s ease 0.5s;
+}
+
+.main-hovers__main:hover .omg-title-big {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transition: opacity 0.64s ease 0.5s, -webkit-transform 0.64s ease 0.5s;
+  transition: opacity 0.64s ease 0.5s, -webkit-transform 0.64s ease 0.5s;
+  -o-transition: transform 0.64s ease 0.5s, opacity 0.64s ease 0.5s;
+  transition: transform 0.64s ease 0.5s, opacity 0.64s ease 0.5s;
+  transition: transform 0.64s ease 0.5s, opacity 0.64s ease 0.5s, -webkit-transform 0.64s ease 0.5s;
+}
+
+.main-hovers__items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 23.75rem;
-  -webkit-transition: flex-grow 0.5s ease-in-out, -webkit-box-flex 0.5s ease-in-out;
-  transition: flex-grow 0.5s ease-in-out, -webkit-box-flex 0.5s ease-in-out;
-  -o-transition: flex-grow 0.5s ease-in-out;
-  transition: flex-grow 0.5s ease-in-out;
-  transition: flex-grow 0.5s ease-in-out, -webkit-box-flex 0.5s ease-in-out, -ms-flex-positive 0.5s ease-in-out;
+  height: 100%;
 }
 
-.hovers__items:hover .item-first-hover {
+.main-hovers__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 0.125rem solid #EAEAEA;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  min-width: 0;
+  position: relative;
+  -webkit-transition: flex-grow 0.64s ease-in-out 0s, -webkit-box-flex 0.64s ease-in-out 0s;
+  transition: flex-grow 0.64s ease-in-out 0s, -webkit-box-flex 0.64s ease-in-out 0s;
+  -o-transition: flex-grow 0.64s ease-in-out 0s;
+  transition: flex-grow 0.64s ease-in-out 0s;
+  transition: flex-grow 0.64s ease-in-out 0s, -webkit-box-flex 0.64s ease-in-out 0s, -ms-flex-positive 0.64s ease-in-out 0s;
 }
 
-.hovers__items .hovers__first {
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 39%;
-  width: 0%;
-  height: 100%;
-  background-color: black;
-  color: white;
+.main-hovers__item:hover {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+}
+
+.main-hovers__item:hover .title-hovers {
   opacity: 0;
-  z-index: 3;
-  -webkit-transition: all 0.7s ease-in-out;
-  -o-transition: all 0.7s ease-in-out;
-  transition: all 0.7s ease-in-out;
+  visibility: hidden;
+  -webkit-transition-delay: 0s;
+       -o-transition-delay: 0s;
+          transition-delay: 0s;
 }
 
-.hovers__item {
+.main-hovers__item:hover .content-hovers {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.5s ease 0.5s;
+  -o-transition: all 0.5s ease 0.5s;
+  transition: all 0.5s ease 0.5s;
+}
+
+.main-hovers__item:nth-child(1) {
+  background-color: #2C1483;
+}
+
+.main-hovers__item:nth-child(2) {
+  background-color: #3A14BF;
+}
+
+.main-hovers__item:nth-child(3) {
+  background-color: #8351F2;
+}
+
+.main-hovers__item:nth-child(4) {
+  background-color: #A988F1;
+}
+
+.main-hovers__item:nth-child(5) {
+  background-color: #F29F05;
+}
+
+.main-hovers__item:nth-child(6) {
+  background-color: #F2CB04;
+}
+
+.main-hovers__item:nth-child(6) .content-hovers__name,
+.main-hovers__item:nth-child(6) .content-hovers__info,
+.main-hovers__item:nth-child(6) .title-hovers__name {
+  color: #000;
+}
+
+.main-hovers__item:nth-child(6) .content-hovers__btn {
+  color: #000;
+  border-color: #000;
+}
+
+.main-hovers__item:nth-child(6) .content-hovers__btn:hover {
+  border-color: #EAEAEA;
+}
+
+.omg-title-sm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2147,89 +2234,262 @@ body::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border: 0.125rem solid #EAEAEA;
-  color: #EAEAEA;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  min-width: 0;
-  -webkit-transition: flex-grow 0.5s ease-in-out 0s, -webkit-box-flex 0.5s ease-in-out 0s;
-  transition: flex-grow 0.5s ease-in-out 0s, -webkit-box-flex 0.5s ease-in-out 0s;
-  -o-transition: flex-grow 0.5s ease-in-out 0s;
-  transition: flex-grow 0.5s ease-in-out 0s;
-  transition: flex-grow 0.5s ease-in-out 0s, -webkit-box-flex 0.5s ease-in-out 0s, -ms-flex-positive 0.5s ease-in-out 0s;
-}
-
-.hovers__item:hover {
-  -webkit-box-flex: 4;
-      -ms-flex: 4;
-          flex: 4;
-  -webkit-transition-delay: 0s;
-       -o-transition-delay: 0s;
-          transition-delay: 0s;
-}
-
-.hovers__item.item-first-hover {
-  position: relative;
-  -webkit-box-flex: 4;
-      -ms-flex: 4;
-          flex: 4;
-  background-color: #000;
-}
-
-.hovers__item.item-first-hover:hover {
-  -webkit-box-flex: 4;
-      -ms-flex: 4;
-          flex: 4;
-}
-
-.hovers__item.item-first-hover:hover ~ .hovers__first {
-  width: 61%;
-  -webkit-transition-delay: 0.3s;
-       -o-transition-delay: 0.3s;
-          transition-delay: 0.3s;
-  opacity: 1;
-}
-
-.hovers__item:nth-child(3) {
-  background-color: #2C1483;
-}
-
-.hovers__item:nth-child(4) {
-  background-color: #3A14BF;
-}
-
-.hovers__item:nth-child(5) {
-  background-color: #8351F2;
-}
-
-.hovers__item:nth-child(6) {
-  background-color: #A988F1;
-}
-
-.hovers__item:nth-child(7) {
-  background-color: #F29F05;
-}
-
-.hovers__item:nth-child(8) {
-  background-color: #F2CB04;
-}
-
-.hovers__content {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   width: 100%;
-  text-align: center;
+  padding-bottom: 1.375rem;
+  -webkit-transition: all 0.4s ease 0.3s;
+  -o-transition: all 0.4s ease 0.3s;
+  transition: all 0.4s ease 0.3s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+._hover-items .omg-title-sm {
+  opacity: 1;
+  visibility: visible;
+}
+
+.omg-title-sm__name {
+  color: #EAEAEA;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.0833333333;
+  text-transform: uppercase;
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.omg-title-sm__image {
+  height: 9.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.omg-title-big {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 0.9375rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: opacity 0.64s ease 0.5s, -webkit-transform 0.64s ease 0s;
+  transition: opacity 0.64s ease 0.5s, -webkit-transform 0.64s ease 0s;
+  -o-transition: opacity 0.64s ease 0.5s, transform 0.64s ease 0s;
+  transition: opacity 0.64s ease 0.5s, transform 0.64s ease 0s;
+  transition: opacity 0.64s ease 0.5s, transform 0.64s ease 0s, -webkit-transform 0.64s ease 0s;
+}
+
+.omg-title-big__agency {
+  color: #EAEAEA;
+  font-weight: 700;
+  font-size: 1.875rem;
+  line-height: 1.1333333333;
+  text-transform: uppercase;
+}
+
+.omg-title-big__omg {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  color: #EAEAEA;
+  font-weight: 800;
+  font-size: 7.375rem;
+  line-height: 0.8474576271;
+}
+
+.omg-hover {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2;
+  height: 100%;
+  background-color: #000;
+  padding: 2.5rem 2.5rem 2.5rem 0rem;
+  -webkit-transition: opacity 0.3s ease 0.3s, width 0.64s ease-in-out, visibility 0.64s ease-in-out;
+  -o-transition: opacity 0.3s ease 0.3s, width 0.64s ease-in-out, visibility 0.64s ease-in-out;
+  transition: opacity 0.3s ease 0.3s, width 0.64s ease-in-out, visibility 0.64s ease-in-out;
+}
+
+.omg-hover__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.omg-hover__title {
+  color: #FFE319;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.275;
+}
+
+.omg-hover__info {
+  color: #EAEAEA;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  max-width: 27.1875rem;
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.7s ease 0s;
+  transition: -webkit-transform 0.7s ease 0s;
+  -o-transition: transform 0.7s ease 0s;
+  transition: transform 0.7s ease 0s;
+  transition: transform 0.7s ease 0s, -webkit-transform 0.7s ease 0s;
+}
+
+.omg-hover__info span {
+  font-weight: 600;
+}
+
+.title-hovers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+  padding-bottom: 1.375rem;
+  -webkit-transition: all 0.4s ease 0.5s;
+  -o-transition: all 0.4s ease 0.5s;
+  transition: all 0.4s ease 0.5s;
+}
+
+.title-hovers__image {
+  height: 5.9375rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.title-hovers__name {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  color: #EAEAEA;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.15;
+}
+
+.content-hovers {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1.875rem;
+  height: 100%;
+  -webkit-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+}
+
+.content-hovers__head {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-column-gap: 2.1875rem;
+     -moz-column-gap: 2.1875rem;
+          column-gap: 2.1875rem;
+}
+
+.content-hovers__name {
+  color: #EAEAEA;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.15;
+}
+
+.content-hovers__info {
+  color: #EAEAEA;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.1875;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.content-hovers__btn {
+  color: #EAEAEA;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.content-hovers__btn:hover {
+  background-color: #EAEAEA;
+  color: #000;
 }
 
 .main-hov {
