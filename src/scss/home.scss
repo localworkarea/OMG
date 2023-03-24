@@ -2179,6 +2179,59 @@
       grid-template-columns: 50% 50%;
   }
 
+  // .items-team__item-first
+  &__item-first {
+    position: relative;
+    @include adaptiveValue("height", 345, 185, 0, 1440, 601);
+    @include adaptiveValue("height", 280, 144, 3, 600, 320);
+    .items-team__name {
+      color: $gray;
+    }
+    .items-team__position {
+      color: $gray;
+    }
+    .items-team__image-ibg {
+      width: 83%;
+      padding-bottom: 80%;
+    }
+    .items-team__circle {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: $_6D37FF;
+      border: rem(1) solid $gray;
+      z-index: -1;
+    }
+    .puzzle-circle {
+      &::after,
+      &::before {
+        background-color: $_6D37FF;
+      }
+      &::before {
+        width: rem(15);
+      }
+    }
+    @media (max-width:375px){
+      .puzzle-circle {
+        width: rem(17);
+        height: rem(17);
+        &::after {
+          height: rem(15);
+          width: rem(15);
+        }
+        &_rt {
+          right: -8px;
+          &::before {
+            width: rem(8);
+          }
+        }
+      }
+    }
+  }
   // .items-team__item
   &__item {
     position: relative;
@@ -2207,57 +2260,6 @@
       }
     }
 
-    &:nth-child(1) {
-      background-color: transparent;
-      border: unset;
-      .items-team__name {
-        color: $gray;
-      }
-      .items-team__position {
-        color: $gray;
-      }
-      .items-team__image-ibg {
-        width: 83%;
-        padding-bottom: 80%;
-      }
-      .items-team__circle {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background-color: $_6D37FF;
-        border: rem(1) solid $gray;
-        z-index: -1;
-      }
-      .puzzle-circle {
-        &::after,
-        &::before {
-          background-color: $_6D37FF;
-        }
-        &::before {
-          width: rem(15);
-        }
-      }
-      @media (max-width:375px){
-        .puzzle-circle {
-          width: rem(17);
-          height: rem(17);
-          &::after {
-            height: rem(15);
-            width: rem(15);
-          }
-          &_rt {
-            right: -8px;
-            &::before {
-              width: rem(8);
-            }
-          }
-        }
-      }
-    }
     &:nth-child(2) {
       .items-team__image-ibg {
         width: 85%;

@@ -3793,34 +3793,24 @@ body::after {
   transition: opacity 0.8s cubic-bezier(0.55, 0.085, 0, 0.99) 0.3s;
 }
 
-.items-team__item {
+.items-team__item-first {
   position: relative;
-  border: 0.0625rem solid #EAEAEA;
-  background-color: #000;
-  -webkit-transition: background-color 0.5s ease-in-out 0s, border-radius 0.6s ease-in-out 0s;
-  -o-transition: background-color 0.5s ease-in-out 0s, border-radius 0.6s ease-in-out 0s;
-  transition: background-color 0.5s ease-in-out 0s, border-radius 0.6s ease-in-out 0s;
 }
 
-.items-team__item:nth-child(1) {
-  background-color: transparent;
-  border: unset;
-}
-
-.items-team__item:nth-child(1) .items-team__name {
+.items-team__item-first .items-team__name {
   color: #EAEAEA;
 }
 
-.items-team__item:nth-child(1) .items-team__position {
+.items-team__item-first .items-team__position {
   color: #EAEAEA;
 }
 
-.items-team__item:nth-child(1) .items-team__image-ibg {
+.items-team__item-first .items-team__image-ibg {
   width: 83%;
   padding-bottom: 80%;
 }
 
-.items-team__item:nth-child(1) .items-team__circle {
+.items-team__item-first .items-team__circle {
   display: block;
   position: absolute;
   top: 0;
@@ -3833,13 +3823,22 @@ body::after {
   z-index: -1;
 }
 
-.items-team__item:nth-child(1) .puzzle-circle::after,
-.items-team__item:nth-child(1) .puzzle-circle::before {
+.items-team__item-first .puzzle-circle::after,
+.items-team__item-first .puzzle-circle::before {
   background-color: #6D37FF;
 }
 
-.items-team__item:nth-child(1) .puzzle-circle::before {
+.items-team__item-first .puzzle-circle::before {
   width: 0.9375rem;
+}
+
+.items-team__item {
+  position: relative;
+  border: 0.0625rem solid #EAEAEA;
+  background-color: #000;
+  -webkit-transition: background-color 0.5s ease-in-out 0s, border-radius 0.6s ease-in-out 0s;
+  -o-transition: background-color 0.5s ease-in-out 0s, border-radius 0.6s ease-in-out 0s;
+  transition: background-color 0.5s ease-in-out 0s, border-radius 0.6s ease-in-out 0s;
 }
 
 .items-team__item:nth-child(2) .items-team__image-ibg {
@@ -6399,6 +6398,10 @@ body::after {
     margin-bottom: 2.5rem;
   }
 
+  .items-team__item-first {
+    height: 21.5625rem;
+  }
+
   .items-team__item {
     height: 21.5625rem;
   }
@@ -8009,21 +8012,21 @@ body::after {
 }
 
 @media (max-width: 375px) {
-  .items-team__item:nth-child(1) .puzzle-circle {
+  .items-team__item-first .puzzle-circle {
     width: 1.0625rem;
     height: 1.0625rem;
   }
 
-  .items-team__item:nth-child(1) .puzzle-circle::after {
+  .items-team__item-first .puzzle-circle::after {
     height: 0.9375rem;
     width: 0.9375rem;
   }
 
-  .items-team__item:nth-child(1) .puzzle-circle_rt {
+  .items-team__item-first .puzzle-circle_rt {
     right: -8px;
   }
 
-  .items-team__item:nth-child(1) .puzzle-circle_rt::before {
+  .items-team__item-first .puzzle-circle_rt::before {
     width: 0.5rem;
   }
 
@@ -8609,6 +8612,10 @@ body::after {
 
   .team__title:not(:last-child) {
     margin-bottom: 1.875rem;
+  }
+
+  .items-team__item-first {
+    height: 9rem;
   }
 
   .items-team__item {
@@ -9556,6 +9563,10 @@ body::after {
 }
 
 @media (max-width: 37.5625em) {
+  .items-team__item-first {
+    height: 11.5625rem;
+  }
+
   .items-team__item {
     height: 11.5625rem;
   }
@@ -13495,6 +13506,18 @@ body::after {
 
 @media (min-width: 37.5625em) and (max-width: 90em) {
 @supports (height: clamp( 11.5625rem , 4.3992103695rem  +  19.0703218117vw , 21.5625rem )) {
+    .items-team__item-first {
+      height: clamp( 11.5625rem , 4.3992103695rem  +  19.0703218117vw , 21.5625rem );
+    }
+}
+
+@supports not (height: clamp( 11.5625rem , 4.3992103695rem  +  19.0703218117vw , 21.5625rem )) {
+    .items-team__item-first {
+      height: calc(11.5625rem + 10 * (100vw - 37.5625rem) / 52.4375);
+    }
+}
+
+@supports (height: clamp( 11.5625rem , 4.3992103695rem  +  19.0703218117vw , 21.5625rem )) {
     .items-team__item {
       height: clamp( 11.5625rem , 4.3992103695rem  +  19.0703218117vw , 21.5625rem );
     }
@@ -13508,6 +13531,18 @@ body::after {
 }
 
 @media (min-width: 20em) and (max-width: 37.5em) {
+@supports (height: clamp( 9rem , -0.7142857143rem  +  48.5714285714vw , 17.5rem )) {
+    .items-team__item-first {
+      height: clamp( 9rem , -0.7142857143rem  +  48.5714285714vw , 17.5rem );
+    }
+}
+
+@supports not (height: clamp( 9rem , -0.7142857143rem  +  48.5714285714vw , 17.5rem )) {
+    .items-team__item-first {
+      height: calc(9rem + 8.5 * (100vw - 20rem) / 17.5);
+    }
+}
+
 @supports (height: clamp( 9rem , -0.7142857143rem  +  48.5714285714vw , 17.5rem )) {
     .items-team__item {
       height: clamp( 9rem , -0.7142857143rem  +  48.5714285714vw , 17.5rem );
