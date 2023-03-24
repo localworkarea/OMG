@@ -3660,20 +3660,108 @@ body::after {
 .items-cases__item {
   position: relative;
   overflow: hidden;
-  opacity: 0;
-  -webkit-transform: translateY(10%);
-      -ms-transform: translateY(10%);
-          transform: translateY(10%);
 }
 
-.items-cases__item._watcher-view {
+.items-cases__item:nth-child(1) {
+  opacity: 0;
+  -webkit-transform: translateX(-20%);
+      -ms-transform: translateX(-20%);
+          transform: translateX(-20%);
+}
+
+.items-cases__item:nth-child(1)._watcher-view {
   opacity: 1;
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
           transform: translateY(0);
-  -webkit-transition: all 0.8s cubic-bezier(0.55, 0.085, 0, 0.99) 0s;
-  -o-transition: all 0.8s cubic-bezier(0.55, 0.085, 0, 0.99) 0s;
-  transition: all 0.8s cubic-bezier(0.55, 0.085, 0, 0.99) 0s;
+  -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+
+.items-cases__item:nth-child(2) {
+  opacity: 0;
+  -webkit-transform: translateX(20%);
+      -ms-transform: translateX(20%);
+          transform: translateX(20%);
+}
+
+.items-cases__item:nth-child(2)._watcher-view {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 0.8s ease 0.2s;
+  -o-transition: all 0.8s ease 0.2s;
+  transition: all 0.8s ease 0.2s;
+}
+
+.items-cases__item:nth-child(3) {
+  opacity: 0;
+  -webkit-transform: translateX(-20%);
+      -ms-transform: translateX(-20%);
+          transform: translateX(-20%);
+}
+
+.items-cases__item:nth-child(3)._watcher-view {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+
+.items-cases__item:nth-child(4) {
+  opacity: 0;
+  -webkit-transform: translateX(20%);
+      -ms-transform: translateX(20%);
+          transform: translateX(20%);
+}
+
+.items-cases__item:nth-child(4)._watcher-view {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 0.8s ease 0.2s;
+  -o-transition: all 0.8s ease 0.2s;
+  transition: all 0.8s ease 0.2s;
+}
+
+.items-cases__item:nth-child(5) {
+  opacity: 0;
+  -webkit-transform: translateX(-20%);
+      -ms-transform: translateX(-20%);
+          transform: translateX(-20%);
+}
+
+.items-cases__item:nth-child(5)._watcher-view {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+
+.items-cases__item:nth-child(6) {
+  opacity: 0;
+  -webkit-transform: translateX(20%);
+      -ms-transform: translateX(20%);
+          transform: translateX(20%);
+}
+
+.items-cases__item:nth-child(6)._watcher-view {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 0.8s ease 0.2s;
+  -o-transition: all 0.8s ease 0.2s;
+  transition: all 0.8s ease 0.2s;
 }
 
 .items-cases__image-ibg {
@@ -4343,7 +4431,6 @@ body::after {
   grid-template-columns: auto auto;
   -ms-grid-rows: (103px)[3];
   grid-template-rows: repeat(3, 103px);
-  background-color: #000;
 }
 
 .get-career__li {
@@ -4359,6 +4446,23 @@ body::after {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: #000;
+  -webkit-transition: background-color 0.3s ease 0s;
+  -o-transition: background-color 0.3s ease 0s;
+  transition: background-color 0.3s ease 0s;
+}
+
+.get-career__li:hover {
+  background-color: #6D37FF;
+}
+
+.get-career__li:hover .get-career__li-text::before {
+  background-color: #EAEAEA;
+}
+
+.get-career__li:hover .puzzle-circle::before,
+.get-career__li:hover .puzzle-circle::after {
+  background-color: #6D37FF;
 }
 
 .get-career__li:nth-child(2) .puzzle-circle_top {
@@ -4397,11 +4501,17 @@ body::after {
   height: 0.75rem;
   border-radius: 50%;
   background-color: #6D37FF;
+  -webkit-transition: background-color 0.3s ease 0s;
+  -o-transition: background-color 0.3s ease 0s;
+  transition: background-color 0.3s ease 0s;
 }
 
 .get-career__puzzle.puzzle-circle::before,
 .get-career__puzzle.puzzle-circle::after {
   background-color: #000;
+  -webkit-transition: background-color 0.3s ease 0s;
+  -o-transition: background-color 0.3s ease 0s;
+  transition: background-color 0.3s ease 0s;
 }
 
 .against-career__list {
